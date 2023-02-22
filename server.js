@@ -3,12 +3,14 @@ const app = Express();
 import mongoose from "mongoose";
 import Document from "./model/Document.js";
 
+const mongoDB = "";
+
 app.set("view engine", "ejs");
 app.use(Express.static('public'));
 app.use(Express.urlencoded({extended : true}));
 
 mongoose.set('strictQuery', true);
-mongoose.connect("mongodb+srv://abhranil08:abhra1996@cluster0.zjba14p.mongodb.net/pasteBin?retryWrites=true&w=majority", {
+mongoose.connect(mongoDBCred, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
 })
